@@ -135,77 +135,76 @@
 //-----------------------//-------------------------------------------------------------------------
 
 //task10
-let studentsArray = [
-    {
-        name: "Ben Kilinski",
-        birthdate: "10/03/1997",
-        email: "ben.kilinski@gmail.com",
-        resut: "aproved"
-    }, 
-    {
-        name: "Jony Walter",
-        birthdate: "10/03/1990",
-        email: "jony@gmail.com",
-        resut: "not aproved"
-    }, 
-    {
-        name: "Ilana",
-        birthdate: "10/03/1999",
-        email: "ilana@gmail.com",
-        resut: "aproved"
-    }]
+// let studentsArray = [
+//     {
+//         name: "Ben Kilinski",
+//         birthdate: "10/03/1997",
+//         email: "ben.kilinski@gmail.com",
+//         resut: "aproved"
+//     }, 
+//     {
+//         name: "Jony Walter",
+//         birthdate: "10/03/1990",
+//         email: "jony@gmail.com",
+//         resut: "not aproved"
+//     }, 
+//     {
+//         name: "Ilana",
+//         birthdate: "10/03/1999",
+//         email: "ilana@gmail.com",
+//         resut: "aproved"
+//     }]
 
-function printStudentsLog(){
-    for (const iterator of studentsArray) {
-        console.log(iterator)
-    }
-}
+// function printStudentsLog(){
+//     for (const iterator of studentsArray) {
+//         console.log(iterator)
+//     }
+// }
 
-function printStudent3Log(){
-    for(const iterator of studentsArray){
-        for(const key in iterator){
-            if(iterator[key]=="Ilana"){
-                console.log(iterator)
-            }
-        }
-    }
-}
+// function printStudent3Log(){
+//     for(const iterator of studentsArray){
+//         for(const key in iterator){
+//             if(iterator[key]=="Ilana"){
+//                 console.log(iterator)
+//             }
+//         }
+//     }
+// }
 
-function printStudentsPage(){
-    for(const iterator of studentsArray){
-        task10.innerHTML += `<div id="student${studentsArray.indexOf(iterator)}"></div>`
-        let studentObject = document.getElementById(`student${studentsArray.indexOf(iterator)}`)
-        for(const key in iterator){
-            studentObject.innerHTML += `<p>${key}: ${iterator[key]}</p>` 
-        }
-    }
-}
+// function printStudentsPage(){
+//     for(const iterator of studentsArray){
+//         task10.innerHTML += `<div id="student${studentsArray.indexOf(iterator)}"></div>`
+//         let studentObject = document.getElementById(`student${studentsArray.indexOf(iterator)}`)
+//         for(const key in iterator){
+//             studentObject.innerHTML += `<p>${key}: ${iterator[key]}</p>` 
+//         }
+//     }
+// }
 //-------------------//-----------------------
 
 //task 11
-let office = [
-    {
-    department: prompt("insert departament"),
-    workers: +prompt("insert the number of workers"), 
-    manger: prompt("insert the manager name"),
-    },
-    {
-    department: prompt("insert departament"),
-    workers: +prompt("insert the number of workers"), 
-    manger: prompt("insert the manager name"),
-    },
-    {
-    department: prompt("insert departament"),
-    workers: +prompt("insert the number of workers"), 
-    manger: prompt("insert the manager name"),
+let office = getOffice()
+function getOffice(){
+    let officeArray = []
+    let numDepartments = +prompt("How many departments do you have?")
+    for (let i = 0; i<numDepartments; i++){
+        let objectMy = {
+            department: prompt("insert departament"),
+            workers: +prompt("insert the number of workers"), 
+            manager: prompt("insert the manager name"),
+        }    
+        officeArray.push(objectMy)        
     }
-]
-function task11(){
+    return officeArray   
+}
+
+function task11(){ 
     for(const iterator of office){
-        document.body.innerHTML += `<div id="${office.indexOf(iterator)}"></div>`
-        for(const key of iterator){
-            document.body.innerHTML += `<p id="${office.indexOf(iterator)}">${key}: ${iterator[key]}</p>`
+        document.getElementById("task11div").innerHTML += `<div id="dep${office.indexOf(iterator)+1}"></div>`
+        for(const key in iterator){
+            document.getElementById(`dep${office.indexOf(iterator)+1}`).innerHTML += `<p>${key}: ${iterator[key]}</p>`
         }
     }
-}
+} 
 task11()
+
