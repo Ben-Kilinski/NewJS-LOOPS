@@ -183,28 +183,138 @@
 //-------------------//-----------------------
 
 //task 11
-let office = getOffice()
-function getOffice(){
-    let officeArray = []
-    let numDepartments = +prompt("How many departments do you have?")
-    for (let i = 0; i<numDepartments; i++){
-        let objectMy = {
-            department: prompt("insert departament"),
-            workers: +prompt("insert the number of workers"), 
-            manager: prompt("insert the manager name"),
-        }    
-        officeArray.push(objectMy)        
-    }
-    return officeArray   
-}
+// let office = getOffice()
 
-function task11(){ 
-    for(const iterator of office){
-        document.getElementById("task11div").innerHTML += `<div id="dep${office.indexOf(iterator)+1}"></div>`
-        for(const key in iterator){
-            document.getElementById(`dep${office.indexOf(iterator)+1}`).innerHTML += `<p>${key}: ${iterator[key]}</p>`
-        }
-    }
-} 
-task11()
+// function getOffice(){
+//     let officeArray = []
+//     let numDepartments = +prompt("How many departments do you have?")
+//     for (let i = 0; i<numDepartments; i++){
+//         let objectMy = {
+//             department: prompt("insert departament"),
+//             workers: +prompt("insert the number of workers"), 
+//             manager: prompt("insert the manager name"),
+//         }    
+//         officeArray.push(objectMy)        
+//     }
+//     return officeArray   
+// }
+
+// function task11(){ 
+//     for(const iterator of office){
+//         document.getElementById("task11div").innerHTML += `<div id="dep${office.indexOf(iterator)+1}"></div>`
+//         for(const key in iterator){
+//             document.getElementById(`dep${office.indexOf(iterator)+1}`).innerHTML += `<p>${key}: ${iterator[key]}</p>`
+//         }
+//     }
+// } 
+// task11()
+//-----------------------//-----------------------
+
+//task 12
+// function showForm() {
+//     document.body.innerHTML += `<form id="myForm")>
+//                                 <label>Original station: </label><input id="ostation"type=" text"><br>
+//                                 <label>Final station: </label><input id="fstation" type="text"><br>
+//                                 <label>Travel time: </label><input id="travelTime"type="number"><br>
+//                                 </form>
+//                                 <button id="btnConfirm">confirm</button>`
+//     btnConfirm.addEventListener("click", () => {
+//         document.body.innerHTML = 
+//         `<p>Original station: ${ostation.value}</p>
+//         <p>Final station: ${fstation.value}</p>
+//         <p>Travel time:${travelTime.value}</p>`
+
+//     })
+// }
+// btn12.addEventListener("click", showForm)
+//---------------------------------//-------------------------------
+
+//task 13 
+// let cities = [
+//     {
+//     City: "New York",
+//     Population: "8.5m",
+//     Quarentine: "yes",
+//     Symbol: "https://www.nyc.gov/assets/dcas/images/content/pages/CitySealColor.jpg", 
+//     }, 
+//     {
+//     City: "Tel Aviv",
+//     Population: "1.4m",
+//     Quarentine: "no",
+//     Symbol: "https://www.crwflags.com/fotw/images/i/il-tlviv.gif" 
+//     }, 
+
+//     { 
+//     City: "Mexico City",
+//     Population: "8.9m",
+//     Quarentine: "no",
+//     Symbol: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Coat_of_arms_of_Mexico.svg/1200px-Coat_of_arms_of_Mexico.svg.png", 
+//     }, 
+
+//     {
+//     City: "Buenos Aires",
+//     Population: "15.5m",
+//     Quarentine: "no",
+//     Symbol:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Escudo_de_la_Ciudad_de_Buenos_Aires.svg/1200px-Escudo_de_la_Ciudad_de_Buenos_Aires.svg.png" , 
+//     }, 
+
+//     { 
+//     City: "Tokyo",
+//     Population: "14m",
+//     Quarentine: "yes",
+//     Symbol:"https://upload.wikimedia.org/wikipedia/commons/c/c9/Symbol_of_Tokyo_Metropolis.svg", 
+//     }
+// ]
+
+// function printTokyo(){
+//     for(const iterator of cities){
+//         if(iterator.City == "Tokyo"){
+//             for(const key in iterator){
+//                 if (key == "Symbol") {
+//                     document.body.innerHTML += `<div>Symbol: <img src="${iterator[key]}"></div>`;
+//                 } 
+//                 else {
+//                     document.body.innerHTML += `<div>${key}: ${iterator[key]}</div>`;
+//                 }
+//             }    
+//         }
+//     }
+// }
+
+// function printCities(){
+//     let cityHtml = "";
+    
+//     for(const iterator of cities){
+//         cityHtml += `<div id="city${cities.indexOf(iterator)+1}"></div>`
+        
+//         for(const key in iterator){
+            
+//             if(key == "Symbol"){
+//                 cityHtml += `<p><img src="${iterator[key]}" width="100" height="75"></p>`
+//             }
+//             else{
+//                 cityHtml += `<p>${key}: ${iterator[key]}</p>`
+//             }
+//         }
+//     }
+//     cityHtml += `<button id="btnNewCity">add new city</button>`
+//     document.body.innerHTML += cityHtml
+// }
+// printCities()
+
+// btnNewCity.addEventListener("click", ()=>{
+//     let newCity = {
+//         city: prompt("city name"),
+//         population: +prompt("population")+"m",
+//         Quarentine: prompt("its a city under quarentine?"),
+//         Symbol: prompt("insert city symbol image link")
+//     }
+//     cities.push(newCity)
+//     document.body.innerHTML = '';
+//     printCities()
+// })
+//-----------------------------------------------------------
+
+//task 14
+
 
